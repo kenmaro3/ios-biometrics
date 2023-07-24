@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3E0A4B2A6E6D5C0069884B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E0A4A2A6E6D5C0069884B /* Home.swift */; };
 		0AA9C2132A6E653A00F6CD0C /* BiometricsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9C2122A6E653A00F6CD0C /* BiometricsApp.swift */; };
 		0AA9C2152A6E653A00F6CD0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9C2142A6E653A00F6CD0C /* ContentView.swift */; };
 		0AA9C2172A6E653D00F6CD0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA9C2162A6E653D00F6CD0C /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3E0A4A2A6E6D5C0069884B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0AA9C20F2A6E653A00F6CD0C /* Biometrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biometrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA9C2122A6E653A00F6CD0C /* BiometricsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsApp.swift; sourceTree = "<group>"; };
 		0AA9C2142A6E653A00F6CD0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3E0A492A6E6D4D0069884B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A3E0A4A2A6E6D5C0069884B /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0AA9C2062A6E653A00F6CD0C = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		0AA9C2112A6E653A00F6CD0C /* Biometrics */ = {
 			isa = PBXGroup;
 			children = (
+				0A3E0A492A6E6D4D0069884B /* View */,
 				0AA9C2122A6E653A00F6CD0C /* BiometricsApp.swift */,
 				0AA9C2142A6E653A00F6CD0C /* ContentView.swift */,
 				0AA9C2162A6E653D00F6CD0C /* Assets.xcassets */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA9C2152A6E653A00F6CD0C /* ContentView.swift in Sources */,
+				0A3E0A4B2A6E6D5C0069884B /* Home.swift in Sources */,
 				0AA9C2132A6E653A00F6CD0C /* BiometricsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +282,7 @@
 				DEVELOPMENT_TEAM = B4C7245FA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allows us to use face id for authentication";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +312,7 @@
 				DEVELOPMENT_TEAM = B4C7245FA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please allows us to use face id for authentication";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
