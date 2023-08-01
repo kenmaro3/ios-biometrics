@@ -9,16 +9,43 @@ import SwiftUI
 import LocalAuthentication
 
 struct Home: View {
+    var size: CGSize
+    @State private var isFaceIdDone: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear{
-                print("here")
-                Task.detached{ @MainActor in
-                    print("will start on appear main")
-                    faceIdAuthentication()
-                    
+        VStack(
+            alignment: .center,
+            spacing: 10
+            
+        ){
+            Text(isFaceIdDone ? "Face ID worked!!" : "Hello, world")
+                .onAppear{
+                    print("here")
+                    Task.detached{ @MainActor in
+                        print("will start on appear main")
+                        faceIdAuthentication()
+                        
+                    }
                 }
+            
+            Button{
+                isFaceIdDone = false
+                faceIdAuthentication()
+                
+            } label: {
+                Text("Reset")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: size.width * 0.4)
+                    .padding(.vertical, 15)
+                    .background{
+                        Capsule()
+                            .fill(.black)
+                    }
+                
             }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .frame(maxHeight: .infinity, alignment: .center)
     }
     
     func faceIdAuthentication(){
@@ -30,6 +57,7 @@ struct Home: View {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){ success, authenticationError in
                 if success{
                     print("successed")
+                    isFaceIdDone = true
                 }else{
                     print("failed")
                 }
@@ -41,6 +69,9 @@ struct Home: View {
     }
 }
 
-#Preview {
-    Home()
+
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home(size: CGSize())
+    }
 }
